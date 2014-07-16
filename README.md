@@ -1,6 +1,6 @@
 # File Map
 
-[![npm](http://img.shields.io/npm/v/file-map.svg?style=flat)](https://badge.fury.io/js/file-map) [![tests](http://img.shields.io/travis/jenius/file-map/master.svg?style=flat)](https://travis-ci.org/jenius/file-map) [![dependencies](http://img.shields.io/gemnasium/jenius/file-map.svg?style=flat)](https://david-dm.org/jenius/file-map)
+[![npm](http://img.shields.io/npm/v/file-map.svg?style=flat)](https://badge.fury.io/js/file-map) [![tests](http://img.shields.io/travis/jenius/file-map/master.svg?style=flat)](https://travis-ci.org/jenius/file-map) [![dependencies](http://img.shields.io/gemnasium/jenius/file-map.svg?style=flat)](https://gemnasium.com/jenius/file-map)
 
 Builds a recursive file tree from a root directory
 
