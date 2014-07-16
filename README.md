@@ -42,8 +42,6 @@ The structure you'll get back will look something like this:
   path: '',
   fullPath: '/Users/example/some_folder',
   stat: [Object], // result of fs.stat
-  files: [Function], // utility: returns only children that are files
-  directories: [Function], // utility: returns only children that are dirs
   children: [{
     type: 'file',
     path: 'foo.txt'
@@ -53,8 +51,6 @@ The structure you'll get back will look something like this:
     type: 'directory',
     path: 'nested',
     fullPath: '/Users/example/some_folder/nested',
-    files: [Function],
-    directories: [Function],
     stat: [Object],
     children: [{
       type: 'file',
