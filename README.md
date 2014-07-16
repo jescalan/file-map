@@ -23,7 +23,7 @@ var file_map = require('file-map');
 file_map(__dirname).then(console.log);
 ```
 
-If you had a directory structure that looked like this:
+If you had a directory structure that looked like this, and passed in the `example` folder to file-map:
 
 ```
 /Users/example
@@ -39,22 +39,22 @@ The structure you'll get back will look something like this:
 ```js
 [{
   type: 'directory',
-  path: '',
+  path: 'some_folder',
   fullPath: '/Users/example/some_folder',
   stat: [Object], // result of fs.stat
   children: [{
     type: 'file',
-    path: 'foo.txt'
+    path: 'some_folder/foo.txt'
     fullPath: '/Users/example/some_folder/foo.txt',
     stat: [Object]
   }, {
     type: 'directory',
-    path: 'nested',
+    path: 'some_folder/nested',
     fullPath: '/Users/example/some_folder/nested',
     stat: [Object],
     children: [{
       type: 'file',
-      path: 'nested/bar.txt'
+      path: 'some_folder/nested/bar.txt'
       fullPath: '/Users/example/some_folder/nested/bar.txt'
       stat: [Object]
     }]
