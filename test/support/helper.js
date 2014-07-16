@@ -1,10 +1,11 @@
 var chai = require('chai'),
-    filetree = require('../..');
+    file_map = require('../..'),
+    path = require('path'),
+    chai_promise = require('chai-as-promised');
 
 var should = chai.should();
+chai.use(chai_promise);
 
-// this is a great place to initialize chai plugins
-// http://chaijs.com/plugins
-
-global.filetree = filetree;
+global.file_map = file_map;
 global.should = should;
+global.test_dir = path.join(__dirname, '../fixtures')
