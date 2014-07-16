@@ -67,7 +67,19 @@ The structure you'll get back will look something like this:
 }]
 ```
 
-So overall, each object contains a `type` (`file` or `directory`), `path` (relative path), `fullPath` (absolute path), and `stat` (fs.stat result). Directories also contain an array of `children`, and utility functions that pull just the `files` or `directories` from the children. That's about it!
+So overall, each object contains a `type` (`file` or `directory`), `path` (relative path), `fullPath` (absolute path), and `stat` (fs.stat result). Directories also contain an array of `children`, and utility functions that pull just the `files` or `directories` from the children.
+
+#### Ignores
+
+If there are certain files or folders you want to ignore, you can do this by passing in some additional options.
+
+```js
+file_map(__dirname, { ignore_files: 'secret.*', ignore_directories: ['**/wow.txt'] })
+```
+
+The `ignore_files` and `ignore_directories` options both take either a string or an array of strings, and they can be [minimatch](https://github.com/isaacs/minimatch) strings. Matches are made against the relative path, so you can include globstars, even though this is a recursive read. So fancy.
+
+#### FAQs
 
 There is no callback interface, because promises are much more flexible, and with such a simple interface, promises don't make it any more complicated anyway. The promise returned is A+ compliant and decorated with extra utilities from [when.js](https://github.com/cujojs/when). There is no sync mode because you shouldn't be doing big i/o reads like this synchronously anyway.
 

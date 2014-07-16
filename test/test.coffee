@@ -43,3 +43,19 @@ describe 'basic', ->
     dir2 = _.find(dir.children, path: 'some_folder/nested')
     dir2.children.should.have.lengthOf(1)
     dir2.children[0].path.should.equal('some_folder/nested/bar.txt')
+
+describe 'ignores', ->
+
+  before (cb) ->
+    file_map(path.join(test_dir, 'basic'), { file_ignores: 'wow.*', directory_ignores: '**/nested'})
+      .tap (res) => @map = res
+      .then(-> cb())
+
+  it 'should ignore files specified', ->
+    file = _.find(@map, path: 'wow.txt')
+    should.not.exist(file)
+
+  it 'should ignore directories specified', ->
+    dir = _.find(@map, path: 'some_folder')
+    dir2 = _.find(dir.children, path: 'some_folder/nested')
+    should.not.exist(dir2)
