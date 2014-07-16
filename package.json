@@ -10,12 +10,12 @@
   },
   "main": "lib",
   "devDependencies": {
-    "chai": "^1.9.1",
-    "chai-as-promised": "^4.1.1",
+    "chai": "1.x",
+    "chai-as-promised": "4.x",
     "coffee-script": "1.7.x",
     "coffeelint": "*",
     "istanbul": "*",
-    "lodash": "^2.4.1",
+    "lodash": "2.x",
     "mocha": "*",
     "mocha-lcov-reporter": "*"
   },
@@ -28,6 +28,6 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "when": "^3.4.0"
+    "when": "3.x"
   }
 }
