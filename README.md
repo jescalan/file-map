@@ -74,10 +74,10 @@ So overall, each object contains a `type` (`file` or `directory`), `path` (relat
 If there are certain files or folders you want to ignore, you can do this by passing in some additional options.
 
 ```js
-file_map(__dirname, { ignore_files: 'secret.*', ignore_directories: ['**/wow.txt'] })
+file_map(__dirname, { file_ignores: 'secret.*', directory_ignores: ['**/wow.txt'] })
 ```
 
-The `ignore_files` and `ignore_directories` options both take either a string or an array of strings, and they can be [minimatch](https://github.com/isaacs/minimatch) strings. Matches are made against the relative path, so you can include globstars, even though this is a recursive read. So fancy.
+The `file_ignores` and `directory_ignores` options both take either a string or an array of strings, and they can be [minimatch](https://github.com/isaacs/minimatch) strings. Matches are made against the relative path, so you can include globstars, even though this is a recursive read. So fancy.
 
 #### FAQs
 
